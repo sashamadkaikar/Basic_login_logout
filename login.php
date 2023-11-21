@@ -8,76 +8,60 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login page</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background-image: url('images/login.jpg');
+        body{
+            background-image: url('images/school.jpg');
         }
-
-        .login-container {
-            background-color: rgba(255, 255, 255, 0.3);
-            padding: 50px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            text-align: center;
-        }
-
-        .login-container h2 {
-            margin-bottom: 20px;
-        }
+       .title{
+        text-align:center;
+        margin-top:5%;
+       }
+       
 
         .login-form input {
-            width: 100%;
+            width: 50%;
             padding: 10px;
             margin-bottom: 10px;
+            margin-left:50px;
             box-sizing: border-box;
             border-radius: 8px;
         }
 
-        .sub_button {
-            background-color: #4caf50;
-            color: #fff;
-            padding: 10px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            width: 100%;
-        }
+        
     </style>
 </head>
 <body>
-<div class="login-container">
-    <h2>Login</h2>
-    <form action="" class="login-form" style=" display: flex;">
-    <input type="submit" name="student" value="STUDENT">
-    <input type="submit" name="teacher" value="TEACHER">
+<div class="container">
+<img src="images/teaching.jpg" class="img">
+    <div class="thumbnail">
+      <h1>Unlocking Learning Potential: Connecting teachers and students for collaborative learning success.</h1>
+      <h3>A Collaboration Site</h3>
+    </div>
+
+    <form action="" class="button" style=" display: flex;">
+    <input  class="btn" type="submit" name="student" value="STUDENT">
+    <input class="btn"type="submit" name="teacher" value="TEACHER">
   </form>
     <?php
         if(isset($_GET['student']))
         {
             
-            echo "<h2>Student Login</h2>
+            echo "<h2 class='title' >Student Login</h2>
             <form class='login-form' method='post'>
             <input type='text' placeholder='Username' name='stu_username' required>
             <input type='password' placeholder='Password' name='stu_password' required>
-            <input class='sub_button' type='submit' name='stu_login' value='Login'>
+            <input class='btn2' type='submit' name='stu_login' value='Login'>
            
         </form>";
         }
         if(isset($_GET['teacher']))
         {
-            echo "<h2>Teacher Login</h2>
+            echo "<h2  class='title' >Teacher Login</h2>
             <form class='login-form' method='post'>
             <input type='text' placeholder='Username' name='tea_username' required>
             <input type='password' placeholder='Password' name='tea_password' required>
-            <input class='sub_button' type='submit' name='tea_login' value='Login'>
+            <input class='btn2' type='submit' name='tea_login' value='Login'>
             </form>";
         }
    ?>  
